@@ -1,0 +1,13 @@
+{
+  "autoload": {
+    "psr-4": {
+      "App\\": "App",
+      "Inc\\": "Inc"
+    },
+    "files": [
+      "bootstrap.php",
+      "Inc/helpers.php",
+      "Inc/kirki/kirki.php"
+    ]
+  }
+}

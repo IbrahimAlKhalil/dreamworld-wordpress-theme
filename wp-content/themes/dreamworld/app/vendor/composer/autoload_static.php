@@ -7,9 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInit9f3ca51382496d52af408520d3fa6352
 {
     public static $files = array (
-        '2a1181a15c0b875073a40ff3b11f1688' => __DIR__ . '/../..' . '/bootstrap.php',
+        'a5f882d89ab791a139cd2d37e50cdd80' => __DIR__ . '/..' . '/tgmpa/tgm-plugin-activation/class-tgm-plugin-activation.php',
         '7412f98af3fc2a6f5b844dacbfbf3e2c' => __DIR__ . '/../..' . '/Inc/helpers.php',
-        '4c1144a9ba107c476b8e050e6c0ed968' => __DIR__ . '/../..' . '/Inc/kirki/kirki.php',
+        '3b866d6c94d061533b23d8b653c99fd7' => __DIR__ . '/../..' . '/Inc/routes.php',
+        '2a1181a15c0b875073a40ff3b11f1688' => __DIR__ . '/../..' . '/bootstrap.php',
     );
 
     public static $prefixLengthsPsr4 = array (

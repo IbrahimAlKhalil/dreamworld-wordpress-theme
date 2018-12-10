@@ -5,9 +5,12 @@
       "Inc\\": "Inc"
     },
     "files": [
-      "bootstrap.php",
       "Inc/helpers.php",
-      "Inc/kirki/kirki.php"
+      "Inc/routes.php",
+      "bootstrap.php"
     ]
+  },
+  "require": {
+    "tgmpa/tgm-plugin-activation": "^2.6"
   }
 }

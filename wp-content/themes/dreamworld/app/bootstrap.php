@@ -1,7 +1,10 @@
 <?php
 
-new \App\Theme();
+if (is_admin()) {
+    new \App\TGMPA();
+    new \App\Theme();
 
-add_filter('kirki/config', function () {
-    return ['url_path' => get_theme_file_uri('Inc/kirki/')];
-});
+    if (class_exists('Kirki')) {
+        new \App\Customizer();
+    }
+}

@@ -1,5 +1,4 @@
 import "tiny-slider/dist/tiny-slider.css";
-// import "./slider.scss";
 
 import * as React from "react";
 import {TinySliderSettings, tns} from "tiny-slider";

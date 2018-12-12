@@ -20,7 +20,19 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // Render navigation
+    fetch(saharaRoutes.menu).then(data => {
+        data.json().then(items => {
+            ReactDOM.render(
+                <Router>
+                    <NavMenu items={items}/>
+                </Router>,
+                document.getElementById('main-nav-desktop')
+            )
+        });
+    });
     /**********************************/
+
 
     /***************** Slider ***************/
 
@@ -33,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
         autoplayHoverPause: true,
         speed: 700,
         lazyload: true,
-        autoplayTimeout: 5000
+        autoplayTimeout: 5000,
     };
 
     fetch(saharaRoutes.slider).then(response => {
@@ -52,16 +64,125 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    fetch(saharaRoutes.menu).then(data => {
-        data.json().then(items => {
-            ReactDOM.render(
-                <Router>
-                    <NavMenu items={items}/>
-                </Router>,
-                document.getElementById('main-nav-desktop')
-            )
-        });
-    });
+    /***********************************************/
+
+
+    /************************** Sister Organizations *****************************/
+
+    const sisterConfig: TinySliderSettings = {
+        items: 1,
+        autoplay: true,
+        controls: false,
+        startIndex: 0,
+        autoplayButtonOutput: false,
+        autoplayHoverPause: true,
+        speed: 700,
+        autoplayTimeout: 5000,
+        nav: false,
+        arrowKeys: true,
+        loop: false,
+        responsive: {
+            400: {
+                items: 2
+            },
+            600: {
+                items: 3
+            },
+            800: {
+                items: 4
+            },
+            1000: {
+                items: 6
+            }
+        }
+    };
+
+    ReactDOM.render(
+        <Slider tnsConfig={sisterConfig}>
+            <div className="card">
+                <a href="google.com">
+                    <img src="http://dreamworld.local/wp-content/themes/dreamworld/assets/src/images/logo.png"/>
+                    <p className="title">
+                        Google Inc.
+                    </p>
+                </a>
+            </div>
+            <div className="card">
+                <a href="google.com">
+                    <img src="http://dreamworld.local/wp-content/themes/dreamworld/assets/src/images/logo.png"/>
+                    <p className="title">
+                        Google Inc.
+                    </p>
+                </a>
+            </div>
+            <div className="card">
+                <a href="google.com">
+                    <img src="http://dreamworld.local/wp-content/themes/dreamworld/assets/src/images/logo.png"/>
+                    <p className="title">
+                        Google Inc.
+                    </p>
+                </a>
+            </div>
+            <div className="card">
+                <a href="google.com">
+                    <img src="http://dreamworld.local/wp-content/themes/dreamworld/assets/src/images/logo.png"/>
+                    <p className="title">
+                        Google Inc.
+                    </p>
+                </a>
+            </div>
+            <div className="card">
+                <a href="google.com">
+                    <img src="http://dreamworld.local/wp-content/themes/dreamworld/assets/src/images/logo.png"/>
+                    <p className="title">
+                        Google Inc.
+                    </p>
+                </a>
+            </div>
+            <div className="card">
+                <a href="google.com">
+                    <img src="http://dreamworld.local/wp-content/themes/dreamworld/assets/src/images/logo.png"/>
+                    <p className="title">
+                        Google Inc.
+                    </p>
+                </a>
+            </div>
+            <div className="card">
+                <a href="google.com">
+                    <img src="http://dreamworld.local/wp-content/themes/dreamworld/assets/src/images/logo.png"/>
+                    <p className="title">
+                        Google Inc.
+                    </p>
+                </a>
+            </div>
+            <div className="card">
+                <a href="google.com">
+                    <img src="http://dreamworld.local/wp-content/themes/dreamworld/assets/src/images/logo.png"/>
+                    <p className="title">
+                        Google Inc.
+                    </p>
+                </a>
+            </div>
+            <div className="card">
+                <a href="google.com">
+                    <img src="http://dreamworld.local/wp-content/themes/dreamworld/assets/src/images/logo.png"/>
+                    <p className="title">
+                        Google Inc.
+                    </p>
+                </a>
+            </div>
+            <div className="card">
+                <a href="google.com">
+                    <img src="http://dreamworld.local/wp-content/themes/dreamworld/assets/src/images/logo.png"/>
+                    <p className="title">
+                        Google Inc.
+                    </p>
+                </a>
+            </div>
+        </Slider>,
+        document.getElementById('sister-organizations')
+    );
+
 });
 
 declare var saharaRoutes: {

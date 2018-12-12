@@ -244,16 +244,20 @@ main {
 
 #about {
   padding: 25px;
+  background: #fff;
+  margin-top: 20px;
 }
 
 /*********************** About ***********************/
-#sister-organizations {
-  display: flex;
+
+#sister {
+  padding: 30px 0;
+  margin: 20px 0;
+  background: #fff;
 }
 
 .card {
-  width: 200px;
-  margin: 6px;
+  margin: 20px 6px;
   padding: 0 10px;
   border-radius: 4px;
   box-shadow: 0 0 20px rgba(0, 0, 0, .1);
@@ -265,6 +269,7 @@ main {
 
   p {
     color: $black;
+    text-align: center;
   }
 
   img {

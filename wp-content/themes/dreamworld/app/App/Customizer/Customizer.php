@@ -2,7 +2,7 @@
 
 namespace App;
 
-use App\Section\Slider;
+use App\Customizer\Slider;
 
 class Customizer
 {

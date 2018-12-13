@@ -4,7 +4,7 @@ import {Instance as TippyInstance} from "tippy.js";
 import {Menu} from "../../types";
 import * as React from "react";
 import Tippy from "@tippy.js/react";
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 export class MenuItem extends React.Component<Props> {
 
@@ -59,7 +59,7 @@ export class MenuItem extends React.Component<Props> {
 
             return (
                 <li>
-                    <Link to={menu.link}>{menu.title}</Link>
+                    <NavLink to={menu.link}>{menu.title}</NavLink>
                 </li>
             );
         };

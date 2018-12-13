@@ -257,6 +257,7 @@ main {
 }
 
 .card {
+  width: 200px;
   margin: 20px 6px;
   padding: 0 10px;
   border-radius: 4px;
@@ -268,8 +269,11 @@ main {
   }
 
   p {
-    color: $black;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.2em;
     text-align: center;
+    color: $black;
   }
 
   img {

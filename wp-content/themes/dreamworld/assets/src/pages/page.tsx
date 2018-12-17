@@ -19,7 +19,7 @@ export class Page extends React.Component<Props> {
     render() {
         if (this.state.data) {
             return (
-                <section>
+                <section className="page">
                     <article dangerouslySetInnerHTML={{__html: this.state.data}}/>
                 </section>
             );

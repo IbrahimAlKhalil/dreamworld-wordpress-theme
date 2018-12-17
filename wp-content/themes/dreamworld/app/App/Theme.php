@@ -6,13 +6,31 @@ class Theme
 {
     public function __construct()
     {
-        $this->registerNavs();
+        add_action('after_setup_theme', function () {
+            $this->registerNavs();
+            $this->addFeatureLogo();
+            $this->addFeatureHeader();
+        });
     }
 
-    protected function registerNavs()
+    public function registerNavs()
     {
-        add_action('after_setup_theme', function () {
-            register_nav_menu('Header', 'Main Menu');
-        });
+        register_nav_menus([
+            'Header' => 'Main Menu',
+            'Footer Left' => 'Footer Menu Left',
+            'Footer Right' => 'Footer Menu Right'
+        ]);
+    }
+
+    public function addFeatureLogo()
+    {
+        add_theme_support('logo');
+    }
+
+    public function addFeatureHeader()
+    {
+        add_theme_support('custom-header', [
+            'default-image' => getImage('logo.png')
+        ]);
     }
 }

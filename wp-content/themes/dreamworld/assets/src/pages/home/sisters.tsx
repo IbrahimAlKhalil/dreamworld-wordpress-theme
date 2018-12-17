@@ -6,16 +6,20 @@ export class Sisters extends React.Component {
         sisters: null
     };
 
-    constructor(props) {
-        super(props);
+    private abortController = new AbortController;
 
-        setTimeout(() => {
-            fetch(saharaRoutes.sisters).then(response => {
-                response.json().then(sisters => this.setState({
-                    sisters: sisters
-                }));
-            });
-        }, 100);
+    componentDidMount() {
+        fetch(saharaRoutes.sisters, {
+            signal: this.abortController.signal
+        }).then(response => {
+            response.json().then(sisters => this.setState({
+                sisters: sisters
+            }));
+        });
+    }
+
+    componentWillUnmount() {
+        this.abortController.abort();
     }
 
     render() {

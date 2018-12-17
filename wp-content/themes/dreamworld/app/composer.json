@@ -5,8 +5,8 @@
       "Inc\\": "Inc"
     },
     "files": [
+      "Inc/acf/acf.php",
       "Inc/helpers.php",
-      "Inc/routes.php",
       "bootstrap.php"
     ]
   },

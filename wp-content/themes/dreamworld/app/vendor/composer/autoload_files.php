@@ -7,7 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'a5f882d89ab791a139cd2d37e50cdd80' => $vendorDir . '/tgmpa/tgm-plugin-activation/class-tgm-plugin-activation.php',
+    '086d027acc68bceb1e57a24cce891c9a' => $baseDir . '/Inc/acf/acf.php',
     '7412f98af3fc2a6f5b844dacbfbf3e2c' => $baseDir . '/Inc/helpers.php',
-    '3b866d6c94d061533b23d8b653c99fd7' => $baseDir . '/Inc/routes.php',
     '2a1181a15c0b875073a40ff3b11f1688' => $baseDir . '/bootstrap.php',
 );

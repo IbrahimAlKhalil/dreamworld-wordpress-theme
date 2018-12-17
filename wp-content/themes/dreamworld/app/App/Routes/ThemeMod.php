@@ -1,15 +1,22 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ibrahim
- * Date: 12/13/18
- * Time: 5:39 PM
- */
 
 namespace App\Routes;
 
 
-class ThemeMod
-{
+use WP_REST_Controller;
 
+class ThemeMod extends WP_REST_Controller
+{
+    public function register_routes()
+    {
+        register_rest_route('sahara', '/theme-mod/(?P<name>(sahara-slider|sahara-welcome))', [
+            'methods' => 'GET',
+            'callback' => [$this, 'get_item']
+        ]);
+    }
+
+    public function get_item($request)
+    {
+        return get_theme_mod($request->get_param('name'));
+    }
 }

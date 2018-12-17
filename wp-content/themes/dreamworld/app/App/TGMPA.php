@@ -16,6 +16,13 @@ class TGMPA
             'force_activation' => true,
             'force_deactivation' => true
         ],
+        [
+            'name' => 'Acf REST API',
+            'slug' => 'acf-to-rest-api',
+            'required' => true,
+            'force_activation' => true,
+            'force_deactivation' => true
+        ],
     ];
 
     public function __construct()

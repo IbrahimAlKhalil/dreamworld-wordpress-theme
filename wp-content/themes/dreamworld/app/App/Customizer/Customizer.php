@@ -1,8 +1,11 @@
 <?php
 
-namespace App;
+namespace App\Customizer;
 
-use App\Customizer\Slider;
+use App\Customizer\Sections\Footer;
+use App\Customizer\Sections\Slider;
+use App\Customizer\Sections\Welcome;
+use Kirki;
 
 class Customizer
 {
@@ -16,7 +19,9 @@ class Customizer
 
         // Customizer Sections
         $sections = [
-            Slider::class
+            Slider::class,
+            Welcome::class,
+            Footer::class
         ];
         foreach ($sections as $section) {
             new $section;
@@ -32,7 +37,7 @@ class Customizer
 
     public function addConfig()
     {
-        \Kirki::add_config('saharait-business', [
+        Kirki::add_config('saharait-business', [
             'capability' => 'edit_theme_options',
             'option_type' => 'theme_mod',
         ]);

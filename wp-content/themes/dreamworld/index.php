@@ -14,95 +14,28 @@
     <!-- This variable contains route urls -->
     <script>
         var saharaRoutes = {
-            'slider': '<?php echo get_rest_url(null, 'sahara/slider') ?>',
-            'menu': '<?php echo get_rest_url(null, 'sahara/menu/Header') ?>',
+            slider: '<?php echo get_rest_url(null, 'sahara/theme-mod/sahara-slider') ?>',
+            menu: '<?php echo get_rest_url(null, 'sahara/menu') ?>',
+            sisters: '<?php echo get_rest_url(null, 'sahara/sisters') ?>',
+            welcome: '<?php echo get_rest_url(null, 'sahara/theme-mod/sahara-welcome') ?>',
+            page: '<?php echo get_rest_url(null, 'sahara/page') ?>'
+        };
+
+        var saharaData = {
+            logo: '<?php header_image() ?>',
+            description: '<?php bloginfo('description') ?>',
+            footer: {
+                copyright: '<?php echo get_theme_mod('sahara-footer-copyright') ?>',
+                description: '<?php echo get_theme_mod('sahara-footer-description') ?>'
+            }
         };
     </script>
 
     <script src="<?php asset('bundle.js') ?>"></script>
+    <?php wp_head(); ?>
 </head>
 <body class="flex flex-wrap flex-direction-column">
-<?php get_header() ?>
-
-<main>
-    <!--**************** Slider **********************-->
-    <section id="slider">
-
-    </section>
-
-    <!-- ****************** About *********************-->
-    <section id="about">
-        <h1 class="section-title">About Us</h1>
-        <article>
-            <p>
-                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
-                Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
-                Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a
-                Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the
-                undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et
-                Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the
-                theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor
-                sit amet..", comes from a line in section 1.10.32.
-            </p>
-            <p>
-                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
-                Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their
-                exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-            </p>
-        </article>
-    </section>
-
-    <!-- ****************** Sister organizations *********************-->
-    <section id="sister">
-        <h1 class="section-title">Our Sister Organization</h1>
-
-        <div id="sister-organizations">
-            <div class="card">
-                <a href="google.com">
-                    <img src="<?php image('logo.png') ?>">
-                    <p class="title">
-                        Google Inc.
-                    </p>
-                </a>
-            </div>
-            <div class="card">
-                <a href="google.com">
-                    <img src="<?php image('logo.png') ?>">
-                    <p class="title">
-                        Google Inc.
-                    </p>
-                </a>
-            </div>
-            <div class="card">
-                <a href="google.com">
-                    <img src="<?php image('logo.png') ?>">
-                    <p class="title">
-                        Google Inc.
-                    </p>
-                </a>
-            </div>
-            <div class="card">
-                <a href="google.com">
-                    <img src="<?php image('logo.png') ?>">
-                    <p class="title">
-                        Google Inc.
-                    </p>
-                </a>
-            </div>
-            <div class="card">
-                <a href="google.com">
-                    <img src="<?php image('logo.png') ?>">
-                    <p class="title">
-                        Google Inc.
-                    </p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-</main>
-
-<div class="spacer-top"></div>
-<?php get_footer() ?>
+<div id="app"></div>
+<?php wp_footer(); ?>
 </body>
 </html>

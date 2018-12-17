@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Customizer;
+namespace App\Customizer\Sections;
 
 use Kirki;
 use WP_Customize_Manager;

@@ -7,16 +7,20 @@ export class ImageSlider extends React.Component {
         slides: null
     };
 
-    constructor(props) {
-        super(props);
+    private abortController = new AbortController;
 
-        setTimeout(() => {
-            fetch(saharaRoutes.slider).then(response => {
-                response.json().then(slides => this.setState({
-                    slides: slides
-                }));
-            });
-        }, 2500);
+    componentDidMount() {
+        fetch(saharaRoutes.slider, {
+            signal: this.abortController.signal
+        }).then(response => {
+            response.json().then(slides => this.setState({
+                slides: slides
+            }));
+        });
+    }
+
+    componentWillUnmount() {
+        this.abortController.abort();
     }
 
     render() {

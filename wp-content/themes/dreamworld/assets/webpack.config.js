@@ -5,11 +5,11 @@ module.exports = {
     entry: './src/index.tsx',
     devtool: 'sourcemap',
 
-    optimization: {
-        minimizer: [new UglifyJsPlugin({
-            sourceMap: true
-        })]
-    },
+    // optimization: {
+    //     minimizer: [new UglifyJsPlugin({
+    //         sourceMap: true
+    //     })]
+    // },
 
     output: {
         path: path.resolve(__dirname, 'build'),

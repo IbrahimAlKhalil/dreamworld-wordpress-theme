@@ -72,9 +72,6 @@ header {
     height: 100%;
   }
 
-
-  // ------------- Desktop Menu ----------------- //
-
   nav {
     width: 100%;
     border-radius: 5px;
@@ -85,41 +82,61 @@ header {
   }
 }
 
-#main-nav-desktop {
+#main-nav {
   display: none;
+
+  &.active {
+    display: block;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+
+    a {
+      color: $black;
+      text-decoration: none;
+      font-weight: bold;
+
+      &:active {
+        text-decoration: underline;
+      }
+
+      &.active {
+        color: $accent;
+      }
+    }
+  }
+
+  .sub-menu {
+    display: none;
+  }
+
+  li {
+    padding: 10px 20px;
+    white-space: nowrap;
+
+    &:hover {
+      background: lighten($black, 70%);
+      color: $black;
+    }
+  }
+
+  .has-child:hover .sub-menu {
+    display: block;
+  }
 
   @media all and (min-width: $mobileWidth) {
     height: 85px;
     display: block;
 
-    ul {
+    .top-menu {
       display: flex;
       align-items: center;
       height: 100%;
-      margin: 0;
-      padding: 0;
-    }
 
-    li {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      padding: 0 10px;
-      list-style: none;
-      background: #fff;
-      color: $black;
-      outline: none;
-
-      &:hover {
-        color: lighten($black, 20%);
-        //box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
-      }
-
-      &.current {
-        color: $accent;
-      }
-
-      &.has-child {
+      > .has-child {
         position: relative;
         color: $black;
 
@@ -144,10 +161,56 @@ header {
         }
 
 
-        &:hover, &.tippy-active {
+        &:hover {
           color: #000;
           background: lighten($black, 70%);
         }
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    .sub-menu {
+      position: absolute;
+      z-index: 1;
+      top: calc(100% - 6px);
+      left: 0;
+      padding: 10px 0;
+
+      &.second-level {
+        padding: 0 10px;
+        left: calc(100% - 6px);
+        top: 50%;
+      }
+
+      > div {
+        padding: 5px 0;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, .1);
+      }
+
+      li {
+        padding: 10px 20px;
+      }
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 0 10px;
+      list-style: none;
+      background: #fff;
+      color: $black;
+      outline: none;
+
+      &:hover {
+        color: lighten($black, 20%);
+        //box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
       }
     }
 
@@ -160,39 +223,10 @@ header {
   }
 }
 
-.tippy-sub-menu {
-  padding: 0 !important;
-
-  .tippy-content {
-    overflow: hidden;
-  }
-
-  .sub-menu {
-    padding: 0;
-    margin: 5px 0;
-  }
-
-  li {
-    padding: 14px 25px;
-    list-style: none;
-    outline: none;
-
-    &:hover {
-      background: lighten($black, 70%);
-    }
-  }
-
-  a, span {
-    font-weight: bold;
-    text-decoration: none;
-    color: $black;
-    cursor: pointer;
-    outline: none;
-  }
-}
-
 .collapse-menu {
   width: 30px;
+  margin-right: 10px;
+  cursor: pointer;
 
   @media all and (min-width: $mobileWidth) {
     display: none;
@@ -206,10 +240,18 @@ main {
   width: 100%;
 }
 
+section.page {
+  padding: 10px;
+  background: #fff;
+  margin: 8px;
+  border-radius: 3px;
+}
+
 /********************** Slider *************************/
 
 #slider {
   box-shadow: 0 5px 5px -5px rgba(0, 0, 0, .4);
+  min-height: 460px;
 }
 
 .tns-outer {

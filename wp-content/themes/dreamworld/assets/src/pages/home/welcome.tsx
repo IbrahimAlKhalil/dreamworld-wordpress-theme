@@ -5,14 +5,18 @@ export class Welcome extends React.Component {
         data: null
     };
 
-    constructor(props) {
-        super(props);
+    private abortController = new AbortController;
 
+    componentDidMount() {
         fetch(saharaRoutes.welcome).then(response => {
             response.json().then(data => this.setState({
                 data: data
             }));
         });
+    }
+
+    componentWillUnmount() {
+        this.abortController.abort();
     }
 
     render() {

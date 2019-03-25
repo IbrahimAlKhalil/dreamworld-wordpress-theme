@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {TinySliderSettings} from "tiny-slider";
 import {Slider} from "../../components/slider";
+import {Loader} from "../../components/loader";
 
 export class ImageSlider extends React.Component {
     state = {
@@ -52,7 +53,7 @@ export class ImageSlider extends React.Component {
             );
         }
 
-        return <div>Loading...</div>;
+        return <Loader/>;
     }
 }
 

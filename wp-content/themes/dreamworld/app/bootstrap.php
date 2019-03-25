@@ -1,16 +1,23 @@
 <?php
-if (is_admin()) {
-    new \App\TGMPA();
-}
+session_start();
 
-new \App\Theme();
+if (is_admin()) {
+    new \App\TGMPA;
+}
 
 if (class_exists('Kirki')) {
     new \App\Customizer\Customizer();
 }
 
-// Bootstrap acf
-new \App\ACF();
+// Theme features
+new \App\Theme;
+
+// acf
+new \App\ACF;
+
+// admin ajax
+
+new \App\AdminAjax;
 
 
 // Register routes
@@ -19,7 +26,8 @@ $routes = [
     \App\Routes\Menu::class,
     \App\Routes\Sister::class,
     \App\Routes\ThemeMod::class,
-    \App\Routes\Page::class
+    \App\Routes\Page::class,
+    \App\Routes\Contact::class
 ];
 
 add_action('rest_api_init', function () use (&$routes) {

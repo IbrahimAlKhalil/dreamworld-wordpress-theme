@@ -18,12 +18,14 @@
             menu: '<?php echo get_rest_url(null, 'sahara/menu') ?>',
             sisters: '<?php echo get_rest_url(null, 'sahara/sisters') ?>',
             welcome: '<?php echo get_rest_url(null, 'sahara/theme-mod/sahara-welcome') ?>',
-            page: '<?php echo get_rest_url(null, 'sahara/page') ?>'
+            page: '<?php echo get_rest_url(null, 'sahara/page') ?>',
+            ajax: '<?php echo admin_url('admin-ajax.php') ?>',
+            contact: '<?php echo get_rest_url(null, 'sahara/contact') ?>'
         };
 
         var saharaData = {
             logo: '<?php header_image() ?>',
-            description: '<?php bloginfo('description') ?>',
+            description: '<?php echo preg_replace('/\n/', '\\n', get_option('blogdescription')) ?>',
             footer: {
                 copyright: '<?php echo get_theme_mod('sahara-footer-copyright') ?>',
                 description: '<?php echo get_theme_mod('sahara-footer-description') ?>'

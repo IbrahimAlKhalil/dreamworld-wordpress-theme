@@ -14,9 +14,25 @@ class ComposerStaticInit9f3ca51382496d52af408520d3fa6352
     );
 
     public static $prefixLengthsPsr4 = array (
+        'V' => 
+        array (
+            'Valitron\\' => 9,
+        ),
+        'S' => 
+        array (
+            'Symfony\\Component\\Finder\\' => 25,
+        ),
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
         'I' => 
         array (
             'Inc\\' => 4,
+        ),
+        'G' => 
+        array (
+            'Gregwar\\' => 8,
         ),
         'A' => 
         array (
@@ -25,9 +41,25 @@ class ComposerStaticInit9f3ca51382496d52af408520d3fa6352
     );
 
     public static $prefixDirsPsr4 = array (
+        'Valitron\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/vlucas/valitron/src/Valitron',
+        ),
+        'Symfony\\Component\\Finder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/finder',
+        ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
         'Inc\\' => 
         array (
             0 => __DIR__ . '/../..' . '/Inc',
+        ),
+        'Gregwar\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/gregwar/captcha/src/Gregwar',
         ),
         'App\\' => 
         array (

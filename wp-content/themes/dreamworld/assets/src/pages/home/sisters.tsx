@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {Link} from 'react-router-dom';
+import {Loader} from "../../components/loader";
 
 export class Sisters extends React.Component {
     state = {
@@ -31,8 +32,8 @@ export class Sisters extends React.Component {
                         {
                             this.state.sisters.map(sister => (
                                 <div key={sister.slug} className="card">
-                                    <Link to={`/sister-organizations/${sister.slug}`} className="flex flex-wrap">
-                                        <div>
+                                    <Link to={`/sister/${sister.slug}`} className="flex flex-wrap">
+                                        <div className="img">
                                             <img src={sister.logo} alt={sister.title}/>
                                         </div>
                                         <div className="spacer-top"/>
@@ -48,7 +49,7 @@ export class Sisters extends React.Component {
             );
         }
 
-        return <div>Loading...</div>;
+        return <Loader/>;
     }
 }
 

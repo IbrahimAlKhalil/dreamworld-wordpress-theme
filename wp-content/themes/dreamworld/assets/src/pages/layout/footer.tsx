@@ -15,7 +15,8 @@ export class Footer extends React.Component {
         fetch(`${saharaRoutes.menu}/Footer Right`).then(response => {
             response.json().then(data => this.setState({
                 menu: {
-                    right: data
+                    right: data,
+                    left: this.state.menu.left
                 }
             }))
         });
@@ -23,7 +24,8 @@ export class Footer extends React.Component {
         fetch(`${saharaRoutes.menu}/Footer Left`).then(response => {
             response.json().then(data => this.setState({
                 menu: {
-                    left: data
+                    left: data,
+                    right: this.state.menu.right
                 }
             }))
         });

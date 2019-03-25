@@ -1,4 +1,5 @@
 import * as React from "react";
+import {Loader} from "../../components/loader";
 
 export class Welcome extends React.Component {
     state = {
@@ -23,13 +24,13 @@ export class Welcome extends React.Component {
         if (this.state.data) {
             return (
                 <section id="about">
-                    <h1 className="section-title">Welcome to Dreamworld BD Group Ltd.</h1>
+                    <h1 className="section-title">Welcome to Dreamworld BD Corporation Ltd.</h1>
                     <article dangerouslySetInnerHTML={{__html: this.state.data}}/>
                 </section>
             );
         }
 
-        return <div>Loading...</div>;
+        return <Loader/>;
     }
 }
 

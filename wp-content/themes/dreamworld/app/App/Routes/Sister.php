@@ -56,7 +56,9 @@ class Sister extends WP_REST_Controller
         ]);
 
         if (!$posts) {
-            return new WP_Error(404, 'Not found!');
+            return new \WP_REST_Response(['message' => 'Not Found!', 'status' => 404], 404, [
+                'Content-Type' => 'application/json'
+            ]);
         }
 
         return apply_filters('the_content', $posts[0]->post_content);

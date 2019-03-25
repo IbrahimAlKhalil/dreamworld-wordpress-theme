@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {NavMenu} from "../../components/nav-menu";
+import {Link} from "react-router-dom";
 
 export class Header extends React.Component {
     state = {
@@ -31,7 +32,9 @@ export class Header extends React.Component {
             <header className="flex align-items-center flex-wrap">
 
                 <div className="flex align-items-center">
-                    <img className="logo" src={saharaData.logo} alt={saharaData.description}/>
+                    <Link to="/" className="logo">
+                        <img className="logo" src={saharaData.logo} alt={saharaData.description}/>
+                    </Link>
                     <div className="spacer-right"/>
                     <img className="collapse-menu"
                          onClick={this.toggle.bind(this)}

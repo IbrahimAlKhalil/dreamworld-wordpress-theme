@@ -33,7 +33,7 @@ export class Header extends React.Component {
 
                 <div className="flex align-items-center">
                     <Link to="/" className="logo">
-                        <img className="logo" src={saharaData.logo} alt={saharaData.description}/>
+                        <img className="logo" src={saharaData.logo} alt={saharaData.description}/> <span>{saharaData.title}</span>
                     </Link>
                     <div className="spacer-right"/>
                     <img className="collapse-menu"
@@ -60,6 +60,7 @@ declare var saharaRoutes: {
 };
 
 declare var saharaData: {
-    logo: string,
+    logo: string
     description: string
+    title: string
 };

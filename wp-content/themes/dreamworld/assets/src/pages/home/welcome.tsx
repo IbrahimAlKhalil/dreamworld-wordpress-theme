@@ -25,7 +25,7 @@ export class Welcome extends React.Component {
             return (
                 <section id="about">
                     <h1 className="section-title">Welcome to Dreamworld BD Corporation Ltd.</h1>
-                    <article dangerouslySetInnerHTML={{__html: this.state.data}}/>
+                    <article id="welcome-note" dangerouslySetInnerHTML={{__html: this.state.data}}/>
                 </section>
             );
         }

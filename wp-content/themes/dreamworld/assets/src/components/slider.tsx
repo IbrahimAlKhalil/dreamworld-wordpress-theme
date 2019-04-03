@@ -1,7 +1,7 @@
 import "tiny-slider/dist/tiny-slider.css";
 
 import * as React from "react";
-import {TinySliderSettings, tns} from "tiny-slider";
+import {TinySliderSettings, tns} from "tiny-slider/src/tiny-slider";
 import {DetailedHTMLProps, HTMLAttributes} from "react";
 
 export class Slider extends React.Component<Props> {

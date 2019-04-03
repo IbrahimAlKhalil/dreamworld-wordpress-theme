@@ -61,6 +61,26 @@ class Sister extends WP_REST_Controller
             ]);
         }
 
-        return apply_filters('the_content', $posts[0]->post_content);
+
+        // Get child organizations
+        global $wpdb;
+
+        $query = $wpdb->prepare("select post_id from {$wpdb->postmeta} where meta_key = 'parent' and meta_value = %d", $posts[0]->ID);
+        $result = $wpdb->get_results($query, ARRAY_A);
+        $children = get_posts([
+            'post__in' => array_map(function ($child) {
+                return $child['post_id'];
+            }, $result),
+            'post_type' => 'organization',
+            'post_status' => 'publish',
+        ]);
+
+        return ['content' => apply_filters('the_content', $posts[0]->post_content), 'children' => array_map(function (\WP_Post $organization) {
+            return [
+                'title' => $organization->post_title,
+                'slug' => $organization->post_name,
+                'logo' => get_field('logo', $organization->ID)
+            ];
+        }, $children)];
     }
 }

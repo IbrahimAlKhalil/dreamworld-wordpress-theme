@@ -25,6 +25,7 @@
 
         var saharaData = {
             logo: '<?php header_image() ?>',
+            title: '<?php bloginfo('name') ?>',
             description: '<?php echo preg_replace('/\n/', '\\n', get_option('blogdescription')) ?>',
             footer: {
                 copyright: '<?php echo get_theme_mod('sahara-footer-copyright') ?>',

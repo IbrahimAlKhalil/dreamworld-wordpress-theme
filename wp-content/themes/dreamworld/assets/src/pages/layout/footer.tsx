@@ -60,12 +60,6 @@ export class Footer extends React.Component {
                                 <Menu dir="left"/>
                             </nav>
                         </div>
-                        <div className="column">
-                            <nav className="row">
-                                <h2>Important Links</h2>
-                                <Menu dir="right"/>
-                            </nav>
-                        </div>
                     </div>
                 </div>
                 <div id="small-footer">

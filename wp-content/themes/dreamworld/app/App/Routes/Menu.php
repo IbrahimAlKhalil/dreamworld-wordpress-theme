@@ -2,8 +2,6 @@
 
 namespace App\Routes;
 
-use DOMNode;
-use DOMDocument;
 use WP_REST_Controller;
 
 class Menu extends WP_REST_Controller

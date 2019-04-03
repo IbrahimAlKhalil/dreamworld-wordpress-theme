@@ -41,7 +41,8 @@ add_action('rest_api_init', function () use (&$routes) {
 // Register post types
 
 $postTypes = [
-    \App\PostTypes\Sister::class
+    \App\PostTypes\Sister::class,
+    \App\PostTypes\Organization::class
 ];
 
 foreach ($postTypes as $postType) {

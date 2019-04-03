@@ -2,6 +2,7 @@ import * as React from 'react';
 import {RouteComponentProps} from "react-router";
 import {FourZeroFour} from "./404";
 import {Loader} from "../components/loader";
+import {Sisters} from './home/sisters';
 
 export class Sister extends React.Component<Props> {
     state = {
@@ -25,9 +26,13 @@ export class Sister extends React.Component<Props> {
 
         if (this.state.data) {
             return (
-                <section className="page">
-                    <article dangerouslySetInnerHTML={{__html: this.state.data}}/>
-                </section>
+                <React.Fragment>
+                    <section className="page" id="sister-page">
+                        <article dangerouslySetInnerHTML={{__html: this.state.data.content}}/>
+                    </section>
+
+                    <Sisters organizations={this.state.data.children} title="Child Organizations"/>
+                </React.Fragment>
             );
         }
 

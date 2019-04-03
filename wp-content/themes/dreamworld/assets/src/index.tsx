@@ -15,7 +15,7 @@ import {Contact} from "./pages/contact";
 document.addEventListener('DOMContentLoaded', function () {
     ReactDOM.render(
         <Router>
-            <main>
+            <main className="flex flex-direction-column">
                 <Header/>
                 <Switch>
                     <Route exact path="/" component={Home}/>

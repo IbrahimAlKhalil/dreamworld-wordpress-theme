@@ -2,35 +2,16 @@ import * as React from 'react';
 import {Link} from 'react-router-dom';
 import {Loader} from "../../components/loader";
 
-export class Sisters extends React.Component {
-    state = {
-        sisters: null
-    };
-
-    private abortController = new AbortController;
-
-    componentDidMount() {
-        fetch(saharaRoutes.sisters, {
-            signal: this.abortController.signal
-        }).then(response => {
-            response.json().then(sisters => this.setState({
-                sisters: sisters
-            }));
-        });
-    }
-
-    componentWillUnmount() {
-        this.abortController.abort();
-    }
+export class Sisters extends React.Component<Props> {
 
     render() {
-        if (this.state.sisters) {
+        if (this.props.organizations) {
             return (
-                <section id="sister">
-                    <h1 className="section-title">Our Sister Concerns</h1>
+                <section className="sisters">
+                    <h1 className="section-title">{this.props.title}</h1>
                     <div id="sister-organizations" className="flex justify-content-center flex-wrap">
                         {
-                            this.state.sisters.map(sister => (
+                            this.props.organizations.map(sister => (
                                 <div key={sister.slug} className="card">
                                     <Link to={`/sister/${sister.slug}`} className="flex flex-wrap">
                                         <div className="img">
@@ -53,6 +34,8 @@ export class Sisters extends React.Component {
     }
 }
 
-declare var saharaRoutes: {
-    sisters: string
-};
+
+interface Props {
+    organizations: any,
+    title: string
+}

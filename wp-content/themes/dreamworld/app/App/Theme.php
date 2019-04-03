@@ -17,8 +17,7 @@ class Theme
     {
         register_nav_menus([
             'Header' => 'Main Menu',
-            'Footer Left' => 'Footer Menu Left',
-            'Footer Right' => 'Footer Menu Right'
+            'Footer' => 'Footer Menu',
         ]);
     }
 

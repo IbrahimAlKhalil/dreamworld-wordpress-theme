@@ -35,6 +35,7 @@ export class ImageSlider extends React.Component {
             speed: 700,
             lazyload: true,
             autoplayTimeout: 5000,
+            animateDelay: 2000
         };
 
         if (this.state.slides) {
